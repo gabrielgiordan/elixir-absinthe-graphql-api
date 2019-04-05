@@ -9,7 +9,8 @@ defmodule BlogApiWeb.Schemas.Queries.AdminQueries do
     end
 
     field :users, list_of(:user) do
-      resolve &UserResolver.list_users/2
+      arg :filter, :user_filter
+      resolve &UserResolver.list_users/3
     end
   end
 end

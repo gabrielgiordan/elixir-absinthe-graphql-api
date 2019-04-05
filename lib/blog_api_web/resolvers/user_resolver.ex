@@ -1,7 +1,7 @@
 defmodule BlogApiWeb.Resolvers.UserResolver do
   alias BlogApi.Admin
 
-  def list_user(_args, _info) do
+  def list_users(_args, _info) do
     {:ok, Admin.list_users}
   end
 

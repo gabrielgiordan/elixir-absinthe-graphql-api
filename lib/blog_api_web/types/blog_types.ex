@@ -3,6 +3,12 @@ defmodule BlogApiWeb.Types.BlogTypes do
   use Absinthe.Ecto, repo: BlogApi.Repo
   alias BlogApiWeb.Resolvers.HelperResolver
 
+  input_object :post_filter do
+    field :site, :string
+    field :section, :string
+    field :topic, :string
+  end
+
   object :post do
     field :id, :id
     field :title, :string

@@ -4,7 +4,8 @@ defmodule BlogApiWeb.Schemas.Queries.BlogQueries do
 
   object :post_queries do
     field :posts, list_of(:post) do
-      resolve &PostResolver.list_posts/2
+      arg :filter, :post_filter
+      resolve &PostResolver.list_posts/3
     end
   end
 end
